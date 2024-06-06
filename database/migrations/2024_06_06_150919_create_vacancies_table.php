@@ -24,8 +24,9 @@ return new class extends Migration
             $table->integer('salary')->nullable();
             $table->date('posted_at')->useCurrent();
             $table->date('expired_at')->nullable();
+            $table->foreignId('status_id')->default(1)->required()->constrained()->cascadeOnDelete();
+            $table->foreignId('position_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
-
         });
     }
 

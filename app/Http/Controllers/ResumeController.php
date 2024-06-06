@@ -33,10 +33,7 @@ class ResumeController extends Controller
         return view('resume.create',compact('cities','genders'));
     }
 
-    public function edit()
-    {
-        return view('resume.edit');
-    }
+
 
     public function store(Request $request)
     {

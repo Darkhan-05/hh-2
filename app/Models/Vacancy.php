@@ -21,6 +21,11 @@ class Vacancy extends Model
     //     return $this->belongsToMany(Resume::class, 'vacancy_resume')->withTimestamps();
     // }
 
+    public function position(): BelongsTo
+    {
+        return $this->belongsTo(Position::class);
+    }
+
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);
