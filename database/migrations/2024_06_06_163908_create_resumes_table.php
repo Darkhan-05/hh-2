@@ -23,8 +23,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('address');
             $table->foreignId('city_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('experience_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('education_id')->constrained()->cascadeOnDelete();
             $table->string('skills');
             $table->timestamps();
         });

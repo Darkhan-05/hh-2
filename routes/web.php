@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResumeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/resume', [ResumeController::class, 'index'])->name('resume.index');
+    Route::post('/resume', [ResumeController::class, 'store'])->name('resume.store');
     Route::get('/resume/create', [ResumeController::class, 'create'])->name('resume.create');
     Route::get('/resume/{id}/edit', [ResumeController::class, 'edit'])->name('resume.edit');
 });

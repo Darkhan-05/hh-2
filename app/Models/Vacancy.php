@@ -16,10 +16,10 @@ class Vacancy extends Model
         'name', 'responsibility', 'conditions', 'requirements', 'salary', 'posted_at', 'expired_at', 'company_id', 'city_id', 'employment_type_id','country_id'
     ];
 
-    public function resumes(): BelongsToMany
-    {
-        return $this->belongsToMany(Resume::class, 'vacancy_resume')->withTimestamps();
-    }
+    // public function resumes(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(Resume::class, 'vacancy_resume')->withTimestamps();
+    // }
 
     public function company(): BelongsTo
     {
